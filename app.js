@@ -50,9 +50,7 @@ app.get("/",function(req,res){
     }else{
       res.render("list", {listTytle:"Today" , newitem:foundItems} ) ;
     }
-
   })
-
 })
 
 
@@ -93,14 +91,11 @@ app.post("/delete",(req,res)=>{
         res.redirect("/"+listName);
       }
     })
-
   }
-
 })
 
 app.get("/:route",(req,res)=>{
   const customlist =_.capitalize(req.params.route) ;
-
   List.findOne({name:customlist},function(err,foundList){
     if(!err){
       if(!foundList){
@@ -115,12 +110,7 @@ app.get("/:route",(req,res)=>{
       }
     }
   })
-
-
 })
-
-
-
 
 app.listen(3000,function(){
   console.log("server started ");
