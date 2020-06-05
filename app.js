@@ -111,7 +111,7 @@ app.get("/:route",(req,res)=>{
     }
   })
 })
-
-app.listen(process.env.PORT||3000,function(){
-  console.log("server started ");
+var port=process.env.PORT||3000
+app.listen(port,function(){
+  console.log("server started on port "+port);
 })
